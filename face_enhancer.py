@@ -105,7 +105,7 @@ class GFPGANFaceEnhancer:
 
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "enhance_face"
-    CATEGORY = "image/restoration"
+    CATEGORY = "FaceEnhancer"
 
     def enhance_face(self, image, version='1.4', scale=2, only_center_face=False, bg_upsampler="realesrgan", output_folder="gfpgan_output"):
         # Load the model if not loaded
@@ -233,7 +233,7 @@ class GFPGANFolderProcessor:
 
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "process_folder"
-    CATEGORY = "image/restoration"
+    CATEGORY = "FaceEnhancer"
 
     def process_folder(self, image_folder, version, scale, only_center_face, bg_upsampler, output_folder):
         # Check if folder exists

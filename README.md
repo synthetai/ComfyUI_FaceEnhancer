@@ -43,7 +43,7 @@ pip install --no-cache-dir torch torchvision torchaudio
 ### 3. 安装其他依赖
 
 ```bash
-pip install basicsr basicsr-fixed facexlib realesrgan
+pip install basicsr-fixed facexlib realesrgan
 pip install -r requirements.txt
 ```
 
@@ -71,7 +71,7 @@ wget https://github.com/TencentARC/GFPGAN/releases/download/v1.3.0/GFPGANv1.4.pt
    - scale: 放大倍数（1-4）
    - only_center_face: 如果为 true，则只处理图像中心的人脸
    - bg_upsampler: 背景上采样方法
-   - output_folder: 保存处理结果的文件夹名称
+   - output_folder: 保存处理结果的文件夹名称（将在 ComfyUI 的 output 目录下创建此子文件夹）
 4. 将输出连接到 "Save Image" 节点保存结果
 
 ### 视频处理
@@ -90,7 +90,7 @@ wget https://github.com/TencentARC/GFPGAN/releases/download/v1.3.0/GFPGANv1.4.pt
 
 ## 输出目录
 
-节点会在指定的输出文件夹中创建以下子目录：
+节点会在 ComfyUI 的 output 目录下的指定文件夹（由 output_folder 参数设置）中创建以下子目录：
 
 - `restored_imgs`: 最终增强后的图像
 - `restored_faces`: 只包含增强后的人脸
