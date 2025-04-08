@@ -1,0 +1,15 @@
+[project]
+name = "faceenhancer"
+description = "A ComfyUI custom node based on GFPGAN for face enhancement, capable of restoring and enhancing faces in images and videos"
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["numpy", "opencv-python", "Pillow"]
+
+[project.urls]
+Repository = "https://github.com/synthetai/ComfyUI_FaceEnhancer"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI_FaceEnhancer"
+Icon = ""
