@@ -1,0 +1,97 @@
+{
+  "last_node_id": 5,
+  "last_link_id": 5,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadVideo",
+      "pos": [200, 200],
+      "size": [315, 270],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [3],
+          "slot_index": 0
+        }
+      ],
+      "properties": {},
+      "widgets_values": ["input_video.mp4", true]
+    },
+    {
+      "id": 2,
+      "type": "GFPGANFaceEnhancer",
+      "pos": [600, 200],
+      "size": [315, 350],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [4],
+          "slot_index": 0
+        }
+      ],
+      "properties": {},
+      "widgets_values": ["1.4", 2, false, "realesrgan", "video_faces_enhanced"]
+    },
+    {
+      "id": 3,
+      "type": "VideoCombine",
+      "pos": [1000, 200],
+      "size": [315, 450],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {},
+      "widgets_values": ["enhanced_video", "mp4", 30, "libx264", "medium", 8000000, "yuv420p", false]
+    }
+  ],
+  "links": [
+    {
+      "id": 3,
+      "from_node": 1,
+      "from_socket": 0,
+      "to_node": 2,
+      "to_socket": 0
+    },
+    {
+      "id": 4,
+      "from_node": 2,
+      "from_socket": 0,
+      "to_node": 3,
+      "to_socket": 0
+    }
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+} 
