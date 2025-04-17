@@ -16,7 +16,7 @@
 
 ```bash
 cd ComfyUI/custom_nodes
-git clone https://github.com/YourUsername/ComfyUI_FaceEnhancer.git
+git clone https://github.com/synthetai/ComfyUI_FaceEnhancer.git
 cd ComfyUI_FaceEnhancer
 ```
 
